@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:24:40 by llai              #+#    #+#             */
-/*   Updated: 2024/06/09 20:28:27 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/09 20:37:40 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 int main(void)
 {
-  Bureaucrat b1("office1", 150);
-  Bureaucrat b3("office3", 1);
-
   std::cout << "===== Test contructor =====" << std::endl;
   try
   {
@@ -41,9 +38,14 @@ int main(void)
 
   // Grade too low
   std::cout << "===== Test Grade too low =====" << std::endl;
+
+  Bureaucrat b1("office1", 149);
   try
   {
     b1.decrementGrade();
+    std::cout << b1 << std::endl;
+    b1.decrementGrade();
+    std::cout << b1 << std::endl;
   }
   catch (std::exception &e)
   {
@@ -52,9 +54,11 @@ int main(void)
 
   // Grade too high
   std::cout << "===== Test Grade too high =====" << std::endl;
+
+  Bureaucrat b3("office3", 3);
   try
   {
-    b3.decrementGrade();
+    b3.incrementGrade();
     std::cout << b3 << std::endl;
     b3.incrementGrade();
     std::cout << b3 << std::endl;
@@ -66,6 +70,8 @@ int main(void)
     std::cout << e.what() << std::endl;
   }
 
+  // Result
+  std::cout << "===== Test result =====" << std::endl;
   std::cout << b1 << std::endl;
   std::cout << b3 << std::endl;
 }
