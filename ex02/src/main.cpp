@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:24:40 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 20:43:22 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/12 21:02:38 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
 
 int main(void)
 {
@@ -67,6 +68,37 @@ int main(void)
 
 	Bureaucrat b2("Office2", 72);
     AForm *sForm3 = new RobotomyRequestForm("Target2");
+    std::cout << *sForm3 << std::endl;
+	b2.executeForm(*sForm3);
+
+	b2.signForm(*sForm3);
+	b2.executeForm(*sForm3);
+
+	delete sForm1;
+	delete sForm2;
+	delete sForm3;
+  }
+  catch (std::exception &e)
+  {
+    std::cout << e.what() << std::endl;
+  }
+
+  std::cout << "===== Test PresidentialPardonForm =====" << std::endl;
+
+  try
+  {
+    AForm *sForm1 = new PresidentialPardonForm();
+    std::cout << *sForm1 << std::endl;
+
+	Bureaucrat b1("Office1", 5);
+    AForm *sForm2 = new PresidentialPardonForm("Target1");
+    std::cout << *sForm2 << std::endl;
+
+	b1.signForm(*sForm2);
+	b1.executeForm(*sForm2);
+
+	Bureaucrat b2("Office2", 25);
+    AForm *sForm3 = new PresidentialPardonForm("Target2");
     std::cout << *sForm3 << std::endl;
 	b2.executeForm(*sForm3);
 

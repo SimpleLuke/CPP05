@@ -5,6 +5,7 @@ CFLAG = -Wall -Werror -Wextra -std=c++98 -g3
 SRC = src/Bureaucrat.cpp \
 	  src/ShrubberyCreationForm.cpp \
 	  src/RobotomyRequestForm.cpp \
+	  src/PresidentialPardonForm.cpp \
 	  src/AForm.cpp \
 	  src/main.cpp
 OBJ = $(SRC:src/%cpp=$(BIN)/%o)
