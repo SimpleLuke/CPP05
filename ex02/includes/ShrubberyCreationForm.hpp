@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 15:02:30 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 20:12:45 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/12 20:39:30 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ShrubberyCreationForm : public AForm
 {
  public:
   ShrubberyCreationForm();
-  ShrubberyCreationForm(std::string name);
+  ShrubberyCreationForm(std::string target);
   ShrubberyCreationForm(const ShrubberyCreationForm &);
   ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
   ~ShrubberyCreationForm();
