@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 20:44:46 by llai              #+#    #+#             */
-/*   Updated: 2024/06/09 21:28:20 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:26:58 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ class Form
   class GradeTooHighException : public std::exception
   {
    public:
-    virtual const char *what() const throw();
+    const char *what() const throw();
   };
 
   class GradeTooLowException : public std::exception
   {
    public:
-    virtual const char *what() const throw();
+    const char *what() const throw();
   };
 
   std::string getName() const;
   int getSignGrade() const;
   int getExecGrade() const;
   bool getIsSigned() const;
-  void	setIsSigned(bool status);
+  void setIsSigned(bool status);
 
   void beSigned(Bureaucrat &b);
 

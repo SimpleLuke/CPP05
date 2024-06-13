@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 20:55:14 by llai              #+#    #+#             */
-/*   Updated: 2024/06/09 21:59:43 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:41:07 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,18 @@ void Form::beSigned(Bureaucrat &b)
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-  return "Grade is too high!";
+  return "Grade is too high! (Range from 1 to 150)";
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-  return "Grade is too low!";
+  return "Grade is too low! (Range from 1 to 150)";
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &form)
 {
   os << form.getName() << " , form sign grade " << form.getSignGrade()
      << " , execute grade " << form.getExecGrade() << " , sign status "
-     << form.getIsSigned();
+     << (form.getIsSigned() ? "True" : "False");
   return (os);
 }

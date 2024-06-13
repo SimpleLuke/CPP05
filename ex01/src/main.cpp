@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:24:40 by llai              #+#    #+#             */
-/*   Updated: 2024/06/09 21:56:30 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:44:32 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,22 @@
 int main(void)
 {
   std::cout << "===== Test Form contructor =====" << std::endl;
+  std::cout << "===== Try 1 =====" << std::endl;
   try
   {
     Form f1;
     std::cout << f1 << std::endl;
-    Form f2("form2", 151, 0);
+    Form f2("form2", 150, 150);
     std::cout << f2 << std::endl;
+    Form f3("form3", 150, 0);
+    std::cout << f3 << std::endl;
   }
   catch (std::exception &e)
   {
     std::cout << e.what() << std::endl;
   }
 
+  std::cout << "===== Try 2 =====" << std::endl;
   try
   {
     Form f3("form3", 151, 1);
@@ -44,6 +48,7 @@ int main(void)
   // Test signed
   std::cout << "===== Test succuessfully signed =====" << std::endl;
 
+  std::cout << "===== Try 3 =====" << std::endl;
   try
   {
     Bureaucrat b1("office1", 2);
@@ -56,6 +61,7 @@ int main(void)
     std::cout << e.what() << std::endl;
   }
 
+  std::cout << "===== Try 4 =====" << std::endl;
   try
   {
     Bureaucrat b1("office1", 2);
@@ -70,6 +76,7 @@ int main(void)
 
   std::cout << "===== Test NOT succuessfully signed =====" << std::endl;
 
+  std::cout << "===== Try 5 =====" << std::endl;
   try
   {
     Bureaucrat b1("office1", 2);
@@ -81,26 +88,4 @@ int main(void)
   {
     std::cout << e.what() << std::endl;
   }
-  // // Grade too high
-  // std::cout << "===== Test Grade too high =====" << std::endl;
-  //
-  // Bureaucrat b3("office3", 3);
-  // try
-  // {
-  //   b3.incrementGrade();
-  //   std::cout << b3 << std::endl;
-  //   b3.incrementGrade();
-  //   std::cout << b3 << std::endl;
-  //   b3.incrementGrade();
-  //   std::cout << b3 << std::endl;
-  // }
-  // catch (std::exception &e)
-  // {
-  //   std::cout << e.what() << std::endl;
-  // }
-  //
-  // // Result
-  // std::cout << "===== Test result =====" << std::endl;
-  // std::cout << b1 << std::endl;
-  // std::cout << b3 << std::endl;
 }
