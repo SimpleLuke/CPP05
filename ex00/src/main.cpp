@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:24:40 by llai              #+#    #+#             */
-/*   Updated: 2024/06/09 21:11:57 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:22:52 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ int main(void)
   // Grade too low
   std::cout << "===== Test Grade too low =====" << std::endl;
 
-  Bureaucrat b1("office1", 149);
   try
   {
+    Bureaucrat b1("office1", 149);
+    std::cout << b1 << std::endl;
     b1.decrementGrade();
     std::cout << b1 << std::endl;
     b1.decrementGrade();
@@ -55,9 +56,10 @@ int main(void)
   // Grade too high
   std::cout << "===== Test Grade too high =====" << std::endl;
 
-  Bureaucrat b3("office3", 3);
   try
   {
+    Bureaucrat b3("office3", 3);
+    std::cout << b3 << std::endl;
     b3.incrementGrade();
     std::cout << b3 << std::endl;
     b3.incrementGrade();
@@ -69,9 +71,4 @@ int main(void)
   {
     std::cout << e.what() << std::endl;
   }
-
-  // Result
-  std::cout << "===== Test result =====" << std::endl;
-  std::cout << b1 << std::endl;
-  std::cout << b3 << std::endl;
 }

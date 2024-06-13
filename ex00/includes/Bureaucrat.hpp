@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:42:25 by llai              #+#    #+#             */
-/*   Updated: 2024/06/07 17:37:40 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:18:35 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ class Bureaucrat
   class GradeTooHighException : public std::exception
   {
    public:
-    virtual const char *what() const throw();
+    const char *what() const throw();
   };
 
   class GradeTooLowException : public std::exception
   {
    public:
-    virtual const char *what() const throw();
+    const char *what() const throw();
   };
 
  private:

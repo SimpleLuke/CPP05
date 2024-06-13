@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:53:45 by llai              #+#    #+#             */
-/*   Updated: 2024/06/09 20:28:06 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:19:46 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 Bureaucrat::Bureaucrat(void) : _name("Unknown"), _grade(150)
 {
-  // std::cout << "Default Bureaucrat contructor called" << std::endl;
-  // std::cout << *this << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
@@ -35,25 +33,19 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
     : _name(other._name), _grade(other._grade)
 {
-  // std::cout << "Copy contructor called" << std::endl;
-  // std::cout << *this << std::endl;
-  // *this = other;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-  // std::cout << "Copy assignment operator called" << std::endl;
   if (this != &other)
   {
     this->_grade = other.getGrade();
   }
-  // std::cout << *this << std::endl;
   return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-  // std::cout << "Bureaucrat Deconstructor called" << std::endl;
 }
 
 void Bureaucrat::incrementGrade(void)
