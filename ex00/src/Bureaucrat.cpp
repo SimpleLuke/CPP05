@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 16:53:45 by llai              #+#    #+#             */
-/*   Updated: 2024/06/13 12:19:46 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:40:12 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,12 @@ int Bureaucrat::getGrade() const { return (this->_grade); }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-  return "Grade is too high!";
+  return "Grade is too high! (Range from 1 to 150)";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-  return "Grade is too low!";
+  return "Grade is too low! (Range from 1 to 150)";
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
