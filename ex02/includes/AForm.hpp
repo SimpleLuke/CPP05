@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 20:44:46 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 20:11:09 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:48:19 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class AForm
 
   void beSigned(Bureaucrat &b);
   void checkForm(const Bureaucrat &b) const;
-  virtual void executeDetail(void) const =0;
+  virtual void executeDetail(void) const = 0;
   void execute(Bureaucrat const &executor) const;
 
  private:

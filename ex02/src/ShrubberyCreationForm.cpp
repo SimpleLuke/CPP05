@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 15:02:07 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 20:26:25 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:55:26 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 #include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void)
-    : AForm("Shrubbery Creation", 145, 137), _target("NoTarget")
+    : AForm("Shrubbery Creation Form", 145, 137), _target("NoTarget")
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-    : AForm("Shrubbery Creation", 145, 137), _target(target)
+    : AForm("Shrubbery Creation Form", 145, 137), _target(target)
 {
 }
 

@@ -37,13 +37,4 @@ re: fclean all
 test:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./$(NAME)
 
-show:
-	@printf "UNAME		: $(UNAME)\n"
-	@printf "NAME		: $(NAME)\n"
-	@printf "CC			: $(CC)\n"
-	@printf "CFLAG		: $(CFLAG)\n"
-	@printf "IFLAGS		: $(IFLAGS)\n"
-	@printf "SRC		: $(SRC)\n"
-	@printf "OBJS		: $(OBJS)\n"
-
 .PHONY: all clean fclean re

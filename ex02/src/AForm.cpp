@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 20:55:14 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 20:14:08 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 12:57:53 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,20 +79,14 @@ void AForm::beSigned(Bureaucrat &b)
   }
 }
 
-void	AForm::execute(Bureaucrat const &executor) const
-{
-	AForm::checkForm(executor);
-	this->executeDetail();
-}
-
 const char *AForm::GradeTooHighException::what() const throw()
 {
-  return "Grade is too high!";
+  return "Grade is too high! (Range from 1 to 150)";
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
 {
-  return "Grade is too low!";
+  return "Grade is too low! (Range from 1 to 150)";
 }
 
 const char *AForm::NotSignedException::what() const throw()
@@ -116,6 +110,12 @@ void AForm::checkForm(const Bureaucrat &b) const
   {
     throw AForm::NoExecException();
   }
+}
+
+void AForm::execute(Bureaucrat const &executor) const
+{
+  AForm::checkForm(executor);
+  this->executeDetail();
 }
 
 std::ostream &operator<<(std::ostream &os, const AForm &form)
