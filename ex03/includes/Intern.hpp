@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 21:06:19 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 21:51:30 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 13:11:28 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ class Intern
 
   typedef struct sFormList
   {
-	  std::string formName;
-	  AForm	*(*function)(std::string const &);
+    std::string formName;
+    AForm *(*function)(std::string const &);
   } formList;
 
   static formList forms[];

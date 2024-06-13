@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 21:12:32 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 21:54:33 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 13:22:08 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,22 @@ AForm *Intern::makeForm(std::string formName, std::string target)
       {"Robotomy Request Form", createRobotomyForm},
       {"Presidential Pardon Form", createPresidentialForm}};
 
-  for (int i = 0; i < 3; i++)
+  try
   {
-    if (forms[i].formName == formName)
+    for (int i = 0; i < 3; i++)
     {
-      form = forms[i].function(target);
-      std::cout << "Intern creates " << *form << std::endl;
-      return (form);
+      if (forms[i].formName == formName)
+      {
+        form = forms[i].function(target);
+        std::cout << "Intern creates " << *form << std::endl;
+        return (form);
+      }
     }
+    throw InvalidNameException();
   }
-  throw InvalidNameException();
+  catch (std::exception &e)
+  {
+    std::cout << formName << ":" << e.what() << std::endl;
+    return (NULL);
+  }
 }

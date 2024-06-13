@@ -6,7 +6,7 @@
 /*   By: llai <llai@student.42london.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:23:43 by llai              #+#    #+#             */
-/*   Updated: 2024/06/12 20:42:50 by llai             ###   ########.fr       */
+/*   Updated: 2024/06/13 13:11:19 by llai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ std::string RobotomyRequestForm::getTarget(void) const
 
 void RobotomyRequestForm::executeDetail(void) const
 {
-	std::srand(time(NULL));
 	std::cout << "Drilling noisessssssssssssssss" << std::endl;
 
 	if (std::rand() % 2)
